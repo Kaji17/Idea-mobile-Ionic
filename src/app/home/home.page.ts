@@ -21,6 +21,10 @@ export class HomePage implements OnInit{
   constructor(public navctrl: NavController,
     private ideaServiceList: IdeaService) {}
   ngOnInit(): void {
+    
+  }
+
+  ionViewWillEnter():void{
     this.loadall()
   }
 

@@ -40,7 +40,7 @@ export class AddIdeaPage implements OnInit {
       idea => {
         console.log("enregistrer", idea)
         this.loadall()
-        // this.goToIdeaList()
+        this.goToIdeaList()
       }
       
     )
