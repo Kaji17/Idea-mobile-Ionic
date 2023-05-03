@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-button (click)="back()" fill="clear">
       <ion-icon name="arrow-back-outline"></ion-icon>
@@ -7,5 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onsubmit(ideaForm.form.value)" #ideaForm="ngForm">
+
+    <ion-input #title="ngModel" label="Title input" label-placement="floating" fill="outline" placeholder="Enter title"
+      type="text" [counter]="true" [maxlength]="20" [(ngModel)]="idea.title" name="title"></ion-input>
+
+    <ion-textarea #content="ngModel" aria-label="Custom textarea" placeholder="Type something here" class="custom" helperText="Helper text"
+      [counter]="true" [maxlength]="250" [autoGrow]="true" [(ngModel)]="idea.content" name="content"></ion-textarea>
+    <ion-button color="primary" type="submit" class="btnSave">
+      Sauvegader
+    </ion-button>
+  </form>
 </ion-content>

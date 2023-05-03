@@ -15,7 +15,7 @@ export const routes: Routes = [
     loadComponent: () => import('./add-idea/add-idea.page').then( m => m.AddIdeaPage)
   },
   {
-    path: 'edit-idea',
+    path: 'edit-idea/:id',
     loadComponent: () => import('./edit-idea/edit-idea.page').then( m => m.EditIdeaPage)
   },
 ];

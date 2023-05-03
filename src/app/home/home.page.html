@@ -7,27 +7,26 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <div id="container">
-    <ion-list>
-      <ion-list-header>
+  <ion-list lines="inset">
+    <div class="entete">
+      <ion-list-header class="entete paddinrm">
         Toutes les idées
       </ion-list-header>
-      <ion-item>
-        <ion-label>Test1</ion-label>
-        <div>
-          <ion-button>
-            <ion-icon name="create-outline"></ion-icon>
-          </ion-button>
-          <ion-button>
-            <ion-icon name="trash-outline" color="danger"></ion-icon>
-          </ion-button>
-        </div>
-      </ion-item>
-    </ion-list>
-  </div>
+      <span>{{nbreItem}} {{note}}</span>
+    </div>
+    <ion-item *ngFor="let idea of listIdea">
+      <ion-label [ngClass]="idea.status == 1? 'approuved':'non-approuved' ">{{ idea.title }}</ion-label>
+      <ion-button fill="clear" [routerLink]="['/edit-idea', idea.id]">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="deleteIdea(idea.id)">
+        <ion-icon name="trash-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
   <ion-fab slot="fixed" vertical="bottom" horizontal="center">
     <ion-fab-button (click)="addPage()">
-      <ion-icon name="add" size="medium" ></ion-icon>
+      <ion-icon name="add" size="medium"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

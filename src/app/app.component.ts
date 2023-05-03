@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 import { IonicModule } from '@ionic/angular';
 import { HomePage } from './home/home.page';
 
@@ -7,10 +8,10 @@ import { HomePage } from './home/home.page';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule]
 })
 export class AppComponent {
   rootPage: any = HomePage
-  
+
   constructor() {}
 }

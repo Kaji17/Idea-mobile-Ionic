@@ -1,13 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>edit-idea</ion-title>
+    <ion-button (click)="back()" fill="clear">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title>update-idea</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">edit-idea</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onsubmit()" #ideaForm="ngForm">
+
+    <ion-input #title="ngModel" label="Title input" label-placement="floating" fill="outline" placeholder="Enter title"
+      type="text" [counter]="true" [maxlength]="20" [(ngModel)]="idea.title" name="title"></ion-input>
+
+    <ion-textarea #content="ngModel" aria-label="Custom textarea" placeholder="Type something here" class="custom" helperText="Helper text"
+      [counter]="true" [maxlength]="250" [autoGrow]="true" [(ngModel)]="idea.content" name="content"></ion-textarea>
+   <div class="btncontent">
+    <ion-button color="primary" type="submit" class="btnSave" shape="round">
+      Modifier
+    </ion-button>
+    <ion-button type="button" class="btnSave" shape="round" fill="outline" color="warning" (click)="setStatus()">
+      {{statusIdea}}
+    </ion-button>
+   </div>
+  </form>
 </ion-content>

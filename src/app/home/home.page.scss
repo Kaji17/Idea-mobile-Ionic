@@ -1,0 +1,18 @@
+.entete{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.list-header-inner{
+  justify-content: center;
+}
+.paddinrm{
+  padding-left: 0px;
+}
+.approuved{
+  color: orange;
+}
+.non-approuved{
+  color: white;
+}
